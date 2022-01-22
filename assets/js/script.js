@@ -1,5 +1,5 @@
 // Assignment code here
-
+var pwdString = ""
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -30,34 +30,32 @@ function generatePassword() {
 
   //charSpecial
   var charSpecial = confirm("Do you want your password to have special characters? OK for YES and Cancel for NO.")
-  var pwdString = ""
+  
 
   for (; pwdString.length < pwdLgth;) {
     var rdmNum = Math.floor((Math.random() * 4 + 1))
     if (rdmNum == 1) {
-      if (charUpper == true) {
+      if (charUpper === true) {
         pwdString += (String.fromCharCode(Math.floor(Math.random() * 26) + 65));
       }
     } else if (rdmNum == 2) {
       if (charLower === true) {
-
         pwdString += (String.fromCharCode(Math.floor(Math.random() * 26) + 97));
       }
     } else if (rdmNum == 3) {
-      if (charNum == true) {
+      if (charNum === true) {
 
         pwdString += (String.fromCharCode(Math.floor(Math.random() * 9) + 48));
       } else if (rdmNum == 4) {
-        if (charSpecial == true) {
-
+        if (charSpecial === true) {
           pwdString += (String.fromCharCode(Math.floor(Math.random() * 15) + 33));
         }
       }
     }
-    console.log(pwdString.length)
-    return pwdString
   }
+  
 
+  return pwdString
 }
 // Write password to the #password input
 function writePassword() {
